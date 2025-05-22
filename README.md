@@ -1,16 +1,16 @@
-# Cpp Template
+# Common Lib
 
 ## 🚀 [Build Status]
 
 ### 🛠 Build and ✅ Test
 
-[![Linux Build and Test](https://github.com/Dingola/CppTemplate/actions/workflows/build_and_test_linux.yml/badge.svg)](https://github.com/Dingola/CppTemplate/actions/workflows/build_and_test_linux.yml)
-[![macOS Build and Test](https://github.com/Dingola/CppTemplate/actions/workflows/build_and_test_macos.yml/badge.svg)](https://github.com/Dingola/CppTemplate/actions/workflows/build_and_test_macos.yml)
-[![Windows Build and Test](https://github.com/Dingola/CppTemplate/actions/workflows/build_and_test_windows.yml/badge.svg)](https://github.com/Dingola/CppTemplate/actions/workflows/build_and_test_windows.yml)
+[![Linux Build and Test](https://github.com/Dingola/CommonLib/actions/workflows/build_and_test_linux.yml/badge.svg)](https://github.com/Dingola/CommonLib/actions/workflows/build_and_test_linux.yml)
+[![macOS Build and Test](https://github.com/Dingola/CommonLib/actions/workflows/build_and_test_macos.yml/badge.svg)](https://github.com/Dingola/CommonLib/actions/workflows/build_and_test_macos.yml)
+[![Windows Build and Test](https://github.com/Dingola/CommonLib/actions/workflows/build_and_test_windows.yml/badge.svg)](https://github.com/Dingola/CommonLib/actions/workflows/build_and_test_windows.yml)
 
 ### Code Coverage
 
-[![codecov](https://codecov.io/gh/Dingola/CppTemplate/graph/badge.svg?token=IUM73S6W22)](https://codecov.io/gh/Dingola/CppTemplate)
+[![codecov](https://codecov.io/gh/Dingola/CommonLib/graph/badge.svg?token=IUM73S6W22)](https://codecov.io/gh/Dingola/CommonLib)
 
 <br><br>
 
@@ -72,9 +72,8 @@ Once you have generated the required tokens, add them as secrets in your GitHub 
   - [1) Prerequisites](#1-prerequisites)
   - [2) Setting up](#2-setting-up)
   - [3) Configuring and Building](#3-configuring-and-building)
-  - [4) Run the project](#4-run-the-project)
-  - [5) Deployment](#5-deployment)
-  - [6) Using Docker](#6-using-docker)
+  - [4) Deployment](#4-deployment)
+  - [5) Using Docker](#5-using-docker)
 - [Code Style and Linting](#code-style-and-linting)
 
 <br><br>
@@ -83,19 +82,21 @@ Once you have generated the required tokens, add them as secrets in your GitHub 
 
 | Graph     | Description                                                                                                                                                                                                                     | Visualization                                                                 |
 |-----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------|
-| **Sunburst** | The inner-most circle represents the entire project. Moving outward are folders, and finally individual files. The size and color of each slice represent the number of statements and the coverage, respectively. | <img src="https://codecov.io/gh/Dingola/CppTemplate/graphs/sunburst.svg?token=IUM73S6W22" alt="Sunburst" height="100" width="200"> |
-| **Grid**     | Each block represents a single file in the project. The size and color of each block represent the number of statements and the coverage, respectively.                                                                      | <img src="https://codecov.io/gh/Dingola/CppTemplate/graphs/tree.svg?token=IUM73S6W22" alt="Grid" height="100" width="200">         |
-| **Icicle**   | The top section represents the entire project, followed by folders and individual files. The size and color of each slice represent the number of statements and the coverage, respectively.                                 | <img src="https://codecov.io/gh/Dingola/CppTemplate/graphs/icicle.svg?token=IUM73S6W22" alt="Icicle" height="150" width="400">     |
+| **Sunburst** | The inner-most circle represents the entire project. Moving outward are folders, and finally individual files. The size and color of each slice represent the number of statements and the coverage, respectively. | <img src="https://codecov.io/gh/Dingola/CommonLib/graphs/sunburst.svg?token=9OBZDB24L7" alt="Sunburst" height="100" width="200"> |
+| **Grid**     | Each block represents a single file in the project. The size and color of each block represent the number of statements and the coverage, respectively.                                                                      | <img src="https://codecov.io/gh/Dingola/CommonLib/graphs/tree.svg?token=9OBZDB24L7" alt="Grid" height="100" width="200">         |
+| **Icicle**   | The top section represents the entire project, followed by folders and individual files. The size and color of each slice represent the number of statements and the coverage, respectively.                                 | <img src="https://codecov.io/gh/Dingola/CommonLib/graphs/icicle.svg?token=9OBZDB24L7" alt="Icicle" height="150" width="400">     |
 
 <br><br>
 
 
 ## [Description]
-This project is a template for creating C++-based applications. The solution is divided into two parts: the main project and a test project. 
-By default, only the main project is built. The test project can be built if desired, controlled by a CMake boolean variable `<PROJECT_NAME>_BUILD_TEST_PROJECT`. 
-Additionally, the CMake variable `<PROJECT_NAME>_BUILD_TARGET_TYPE` must be set to `static_library` for the test project to be executed.
+CommonLib is a lightweight C++20 library providing essential utility base classes for modern C++ projects.  
+The solution is structured into two parts: the main library and an optional test suite.
 
-The template allows for the generation of project documentation using Doxygen. It also includes GitHub workflows (CI builds) for Linux, macOS, and Windows.
+By default, only the main library is built. The test suite can be enabled via the CMake option `CommonLib_BUILD_TEST_PROJECT`.  
+To run the test suite, the CMake variable `CommonLib_BUILD_TARGET_TYPE` must be set to `static_library`.
+
+The library supports automatic documentation generation using Doxygen and includes CI workflows for Linux, macOS, and Windows.
 <br><br>
 
 ## [Solution Folder Structure]
@@ -174,7 +175,7 @@ The template allows for the generation of project documentation using Doxygen. I
 <br>
 
 ### Environment Variables
-* _No environment variables are required for this template at the moment._
+* _No environment variables are required for this library at the moment._
 <br><br><br>
 
 ## [Supported Platforms]
@@ -209,8 +210,8 @@ The template allows for the generation of project documentation using Doxygen. I
 
 ### 2) Setting up
 ```
-git clone https://github.com/Dingola/CppTemplate.git
-cd CppTemplate/
+git clone https://github.com/Dingola/CommonLib.git
+cd CommonLib/
 ```
 <br>
 
@@ -228,17 +229,7 @@ cmake --build . --config Release
 ---
 <br>
 
-### 4) Run the project
-```
-cd CppTemplate/Release/
-./CppTemplate.exe
-```
-<br>
-
----
-<br>
-
-### 5) Deployment
+### 4) Deployment
 The project includes scripts for building, testing and deploying the application. These scripts are located in the `Scripts` directory, organized by platform (e.g., `Win` for Windows, `Linux` for Linux).
 
 - **build_release.sh:** Builds the project in release mode.
@@ -253,34 +244,30 @@ To create an NSIS installer (Windows only), set `BUILD_NSIS_INSTALLER` to `true`
 ---
 <br>
 
-### 6) Using Docker
+### 5) Using Docker
 
 #### 1. Build the Docker Image
 Build the Docker image using the following command:
 ```
-docker build -t cpptemplate-dockerimage .
+docker build -t commonlib-dockerimage .
 ```
 <br>
 
 #### 2. Ways to Run the Docker Image
 - **Run directly:**
 ```
-docker run cpptemplate-dockerimage
+docker run commonlib-dockerimage
 ```
 - **Start an interactive Bash shell:**
 ```
-docker run -it cpptemplate-dockerimage bash
+docker run -it commonlib-dockerimage bash
 ```
 <br>
 
-#### 3. Run the App or Tests in the Container
-- **Start the app:**
-```
-./_build_app_release/CPP_Project/CppTemplate
-```
+#### 3. Run the Tests in the Container
 - **Run the tests:**
 ```
-./_build_tests_release/CPP_Project_Tests/CppTemplate_Tests
+./_build_tests_release/CPP_Project_Tests/CommonLib_Tests
 ```
 <br><br><br>
 
