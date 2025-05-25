@@ -5,7 +5,6 @@
 #pragma once
 
 #include "ApiMacro.h"
-
 #include "Base/NonCopyable.h"
 #include "Base/NonMoveable.h"
 

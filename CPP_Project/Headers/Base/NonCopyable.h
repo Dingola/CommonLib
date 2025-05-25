@@ -13,7 +13,8 @@ namespace CommonLib
  * @brief A base class to prevent copying of derived classes.
  *
  * This class is used to prevent copying of derived classes by deleting
- * the copy constructor and copy assignment operator.
+ * the copy constructor and copy assignment operator. Move operations are
+ * explicitly defaulted to allow moving.
  */
 class COMMONLIB_API NonCopyable
 {
@@ -51,5 +52,24 @@ class COMMONLIB_API NonCopyable
          * @return A reference to this object.
          */
         auto operator=(const NonCopyable&) -> NonCopyable& = delete;
+
+        /**
+         * @brief Defaulted move constructor.
+         *
+         * Allows moving of the object.
+         *
+         * @param other The object to move from.
+         */
+        NonCopyable(NonCopyable&&) = default;
+
+        /**
+         * @brief Defaulted move assignment operator.
+         *
+         * Allows moving of the object.
+         *
+         * @param other The object to move from.
+         * @return A reference to this object.
+         */
+        auto operator=(NonCopyable&&) -> NonCopyable& = default;
 };
 }  // namespace CommonLib
