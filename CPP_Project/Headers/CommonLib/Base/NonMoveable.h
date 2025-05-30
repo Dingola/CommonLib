@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "Private/ApiMacro.h"
+#include "CommonLib/ApiMacro.h"
 
 namespace CommonLib
 {

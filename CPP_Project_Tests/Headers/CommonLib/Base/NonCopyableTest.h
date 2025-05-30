@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 
-#include "Base/NonCopyable.h"
+#include "CommonLib/Base/NonCopyable.h"
 
 class NonCopyableTest: public ::testing::Test
 {

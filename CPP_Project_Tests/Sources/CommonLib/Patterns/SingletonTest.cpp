@@ -1,4 +1,4 @@
-#include "Patterns/SingletonTest.h"
+#include "CommonLib/Patterns/SingletonTest.h"
 
 #include <type_traits>
 

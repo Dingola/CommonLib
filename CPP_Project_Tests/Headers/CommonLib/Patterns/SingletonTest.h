@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 
-#include "Patterns/Singleton.h"
+#include "CommonLib/Patterns/Singleton.h"
 
 class SingletonTest: public ::testing::Test
 {

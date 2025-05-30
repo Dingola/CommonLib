@@ -2,7 +2,7 @@
 
 #include <gtest/gtest.h>
 
-#include "Base/NonMoveable.h"
+#include "CommonLib/Base/NonMoveable.h"
 
 class NonMoveableTest: public ::testing::Test
 {

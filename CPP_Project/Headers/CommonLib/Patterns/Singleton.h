@@ -4,9 +4,9 @@
 
 #pragma once
 
-#include "Private/ApiMacro.h"
-#include "Base/NonCopyable.h"
-#include "Base/NonMoveable.h"
+#include "CommonLib/ApiMacro.h"
+#include "CommonLib/Base/NonCopyable.h"
+#include "CommonLib/Base/NonMoveable.h"
 
 namespace CommonLib
 {

@@ -17,8 +17,8 @@ install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Targets
 )
 install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Headers/
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
-    FILES_MATCHING PATTERN "*.h"
-    PATTERN "Private" EXCLUDE
+    FILES_MATCHING REGEX ".*\\.h$"
+    REGEX ".*/Private/.*" EXCLUDE
 )
 
 include(CMakePackageConfigHelpers)
